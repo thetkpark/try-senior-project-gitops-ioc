@@ -1,0 +1,21 @@
+# todo-app.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: todo-app
+  namespace: argocd-namespace
+spec:
+  destination:
+    namespace: default
+    server: https://kubernetes.default.svc
+  source:
+    path: k8s/todo
+    repoURL: https://github.com/thetkpark/try-senior-project-gitops-ioc.git
+    targetRevision: HEAD
+    directory:
+      recurse: true
+  project: default
+  syncPolicy:
+    automated:
+      prune: true 
+      selfHeal: true
