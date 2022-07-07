@@ -48,7 +48,7 @@ const k8sProvider = new k8s.Provider("k8s-provider", {
 
 const argoNS = new k8s.core.v1.Namespace("argocd-namespace", {
     metadata: {
-        name: "argocd-namespace",
+        name: "argocd",
     }
 }, {provider: k8sProvider, dependsOn: [cluster]})
 
