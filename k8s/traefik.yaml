@@ -9,7 +9,7 @@ spec:
     kind: Rule
     middlewares:
     - name: admin-basic-auth
-      namespace: default
+      namespace: traefik
     services:
     - name: api@internal
       kind: TraefikService
