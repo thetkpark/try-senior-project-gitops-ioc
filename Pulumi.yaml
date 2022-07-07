@@ -1,0 +1,3 @@
+name: try-senior-project-gitops-ioc
+runtime: nodejs
+description: A minimal Azure Native TypeScript Pulumi program

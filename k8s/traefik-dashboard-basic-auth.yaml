@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: admin-basic-auth
+type: kubernetes.io/basic-auth
+stringData:
+  username: admin      # required field for kubernetes.io/basic-auth
+  password: password
+
+---
+apiVersion: traefik.containo.us/v1alpha1
+kind: Middleware
+metadata:
+  name: admin-basic-auth
+spec:
+  basicAuth:
+    secret: admin-basic-auth

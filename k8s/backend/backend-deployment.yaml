@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend-depl
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: todo-backend
+  template:
+    metadata:
+      labels:
+        app: todo-backend
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: backend-depl
+        image: akspulumitestregistry.azurecr.io/gdsc-basic-k8s-todo-server
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "20m"
+        ports:
+        - containerPort: 5050
+        envFrom:
+          - configMapRef: 
+              name: todo-app-configmap
+          - secretRef:
+              name: todo-app-secret

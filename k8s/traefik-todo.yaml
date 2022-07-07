@@ -1,0 +1,29 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: todo-app-ingress
+  namespace: default
+spec:
+  # entryPoints:
+  # - web
+  routes:
+  - kind: Rule
+    match: Host(`localhost`) && PathPrefix(`/api/`)
+    services:
+    - kind: Service
+      name: backend-srv
+      namespace: default
+      passHostHeader: true
+      port: 5050
+  - kind: Rule
+    match: Host(`localhost`) && PathPrefix(`/`)
+    services:
+    - kind: Service
+      name: frontend-srv
+      namespace: default
+      passHostHeader: true
+      port: 80
+  tls:
+    secretName: ingress-tls
+    domains: 
+    - main: localhost

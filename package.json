@@ -1,0 +1,13 @@
+{
+    "name": "try-senior-project-gitops-ioc",
+    "devDependencies": {
+        "@types/node": "^14"
+    },
+    "dependencies": {
+        "@pulumi/azure-native": "^1.0.0",
+        "@pulumi/azuread": "^5.25.0",
+        "@pulumi/kubernetes": "^3.19.4",
+        "@pulumi/pulumi": "^3.35.3",
+        "@pulumi/random": "^4.8.0"
+    }
+}

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend-depl
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: todo-frontend
+  template:
+    metadata:
+      labels:
+        app: todo-frontend
+    spec:
+      restartPolicy: Always
+      containers:
+      - name: frontend-depl
+        image: akspulumitestregistry.azurecr.io/gdsc-basic-k8s-todo-client
+        resources:
+          limits:
+            memory: "32Mi"
+            cpu: "10m"
+        ports:
+        - containerPort: 80
+
