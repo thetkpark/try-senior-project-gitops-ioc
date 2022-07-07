@@ -5,5 +5,5 @@ metadata:
 data:
   DB_HOST: mariadb-srv
   DB_PORT: "3306"
-  DB_USER: root
+  DB_USER: todo
   DB_DATABASE: todo
