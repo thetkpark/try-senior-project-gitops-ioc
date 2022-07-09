@@ -9,8 +9,7 @@ spec:
   - web
   routes:
   - kind: Rule
-    # match: Host(`todo.cscms.me`) && PathPrefix(`/`)
-    match: PathPrefix(`/`)
+    match: Host(`todo.cscms.me`) && PathPrefix(`/`)
     services:
     - kind: Service
       name: frontend-srv
