@@ -111,3 +111,12 @@ resource "kubectl_manifest" "argocd" {
     kubernetes_namespace.argocd-namespace
   ]
 }
+data "kubectl_path_documents" "argocd-apps" {
+    pattern = "./argocd/*.yaml"
+}
+
+resource "kubectl_manifest" "test" {
+    override_namespace = kubernetes_namespace.argocd-namespace.metadata[0].name
+    for_each  = toset(data.kubectl_path_documents.argocd-apps.documents)
+    yaml_body = each.value
+}
