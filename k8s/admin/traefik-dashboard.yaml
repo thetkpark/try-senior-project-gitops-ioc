@@ -29,6 +29,6 @@ spec:
       kind: Service
       port: 80
   tls:
-    secretName: cscms-ingress-tls
+    secretName: todo-admin-tls
     domains: 
     - main: todo-admin.cscms.me
