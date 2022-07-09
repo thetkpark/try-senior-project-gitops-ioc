@@ -5,15 +5,17 @@ metadata:
   namespace: traefik
 spec:
   routes:
-  - match: Host(`todo-traefik.cscms.me`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+  - match: Host(`todo-admin.cscms.me`)
     kind: Rule
     middlewares:
     - name: admin-basic-auth-middleware
       namespace: traefik
     services:
-    - name: api@internal
-      kind: TraefikService
+    - name: argocd-server
+      namespace: argocd
+      kind: Service
+      port: 80
   tls:
     secretName: todo-admin-tls
     domains: 
-    - main: todo-traefik.cscms.me
+    - main: todo-admin.cscms.me
