@@ -108,3 +108,5 @@ $RECYCLE.BIN/
 
 **.key
 **.crt
+
+**-secret.yaml

@@ -1,0 +1,30 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-dashboard-api-ingress
+  namespace: traefik
+spec:
+  routes:
+  - match: Host(`todo-admin.cscms.me`) && PathPrefix(`/traefik`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+    kind: Rule
+    middlewares:
+    - name: admin-basic-auth-middleware
+      namespace: traefik
+    services:
+    - name: api@internal
+      kind: TraefikService
+
+  - match: Host(`todo-admin.cscms.me`) && PathPrefix(`/argocd`) 
+    kind: Rule
+    middlewares:
+    - name: admin-basic-auth-middleware
+      namespace: traefik
+    services:
+    - name: argocd-server
+      namespace: argocd
+      kind: Service
+      port: 443
+  tls:
+    secretName: cscms-ingress-tls
+    domains: 
+    - main: todo-admin.cscms.me
