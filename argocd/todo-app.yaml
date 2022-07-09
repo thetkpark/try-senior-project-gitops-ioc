@@ -11,7 +11,7 @@ spec:
   source:
     path: k8s/todo
     repoURL: https://github.com/thetkpark/try-senior-project-gitops-ioc.git
-    targetRevision: HEAD
+    targetRevision: terraform
     directory:
       recurse: true
   project: default
