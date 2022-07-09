@@ -1,0 +1,22 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: traefik-backend
+  namespace: default
+spec:
+  entryPoints:
+  - websecure
+  - web
+  routes:
+  - kind: Rule
+    match: Host(`todo.cscms.me`) && PathPrefix(`/api/`)
+    services:
+    - kind: Service
+      name: backend-srv
+      namespace: default
+      passHostHeader: true
+      port: 5050
+  # tls:
+  #   secretName: ingress-tls
+  #   domains: 
+  #   - main: todo.cscms.me
