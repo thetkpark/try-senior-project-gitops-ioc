@@ -5,7 +5,7 @@ metadata:
   namespace: traefik
 spec:
   routes:
-  - match: PathPrefix(`/traefik`) && (PathPrefix(`/dashboard`) || PathPrefix(`/api`))
+  - match: Host(`todo-admin.cscms.me`) && (PathPrefix(`/traefik/dashboard`) || PathPrefix(`/traefik/api`))
     kind: Rule
     middlewares:
     - name: admin-basic-auth-middleware
@@ -16,7 +16,7 @@ spec:
     - name: api@internal
       kind: TraefikService
 
-  - match: PathPrefix(`/argocd`) 
+  - match: Host(`todo-admin.cscms.me`) && PathPrefix(`/argocd`) 
     kind: Rule
     middlewares:
     - name: admin-basic-auth-middleware

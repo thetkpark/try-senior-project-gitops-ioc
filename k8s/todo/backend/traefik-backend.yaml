@@ -17,7 +17,7 @@ spec:
       namespace: default
       passHostHeader: true
       port: 5050
-  # tls:
-  #   secretName: ingress-tls
-  #   domains: 
-  #   - main: todo.cscms.me
+  tls:
+    secretName: cscms-ingress-tls
+    domains: 
+    - main: todo.cscms.me
