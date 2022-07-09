@@ -15,6 +15,7 @@ spec:
       namespace: argocd
       kind: Service
       port: 80
+      scheme: http
   tls:
     secretName: todo-admin-tls
     domains: 
