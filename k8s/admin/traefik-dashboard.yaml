@@ -27,7 +27,7 @@ spec:
     - name: argocd-server
       namespace: argocd
       kind: Service
-      port: 443
+      port: 80
   tls:
     secretName: cscms-ingress-tls
     domains: 
