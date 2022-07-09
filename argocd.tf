@@ -19,7 +19,7 @@ data "kubectl_path_documents" "argocd-apps" {
 }
 
 resource "kubectl_manifest" "argocd-apps" {
-  override_namespace = kubernetes_namespace.argocd-namespace.metadata[0].name
+  override_namespace = helm_release.argocd.namespace
   for_each           = toset(data.kubectl_path_documents.argocd-apps.documents)
   yaml_body          = each.value
   depends_on = [
