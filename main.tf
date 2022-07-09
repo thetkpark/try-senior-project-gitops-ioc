@@ -9,10 +9,6 @@ terraform {
       source  = "hashicorp/kubernetes"
       version = "2.12.1"
     }
-    helm = {
-      source  = "hashicorp/helm"
-      version = ">= 2.1.0"
-    }
     kubectl = {
       source  = "gavinbunney/kubectl"
       version = ">= 1.14.0"
@@ -78,15 +74,6 @@ provider "kubernetes" {
   client_certificate     = base64decode(azurerm_kubernetes_cluster.senior-project-test-aks.kube_config.0.client_certificate)
   client_key             = base64decode(azurerm_kubernetes_cluster.senior-project-test-aks.kube_config.0.client_key)
   cluster_ca_certificate = base64decode(azurerm_kubernetes_cluster.senior-project-test-aks.kube_config.0.cluster_ca_certificate)
-}
-
-provider "helm" {
-  kubernetes {
-    host                   = azurerm_kubernetes_cluster.senior-project-test-aks.kube_config.0.host
-    client_certificate     = base64decode(azurerm_kubernetes_cluster.senior-project-test-aks.kube_config.0.client_certificate)
-    client_key             = base64decode(azurerm_kubernetes_cluster.senior-project-test-aks.kube_config.0.client_key)
-    cluster_ca_certificate = base64decode(azurerm_kubernetes_cluster.senior-project-test-aks.kube_config.0.cluster_ca_certificate)
-  }
 }
 
 provider "kubectl" {
