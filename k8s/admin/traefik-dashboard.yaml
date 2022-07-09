@@ -15,6 +15,7 @@ spec:
     services:
     - name: api@internal
       kind: TraefikService
+      passHostHeader: true
 
   - match: Host(`todo-admin.cscms.me`) && PathPrefix(`/argocd`) 
     kind: Rule
@@ -28,6 +29,7 @@ spec:
       namespace: argocd
       kind: Service
       port: 80
+      passHostHeader: true
   tls:
     secretName: todo-admin-tls
     domains: 
