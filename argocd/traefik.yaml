@@ -177,6 +177,7 @@ spec:
             namespaces:
               - "default"
               - "traefik"
+              - "argocd"
 
           kubernetesIngress:
             enabled: true
