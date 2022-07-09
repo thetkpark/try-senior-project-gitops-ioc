@@ -15,7 +15,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: backend-depl
-        image: seniorprojecttestregistry.azurecr.io/gdsc-basic-k8s-todo-server
+        image: seniorprojectregistry.azurecr.io/gdsc-basic-k8s-todo-server
         resources:
           limits:
             memory: "32Mi"
