@@ -15,7 +15,7 @@ spec:
       restartPolicy: Always
       containers:
       - name: frontend-depl
-        image: akspulumitestregistry.azurecr.io/gdsc-basic-k8s-todo-client
+        image: seniorprojecttestregistry.azurecr.io/gdsc-basic-k8s-todo-client
         resources:
           limits:
             memory: "32Mi"
