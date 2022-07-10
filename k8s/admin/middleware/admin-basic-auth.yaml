@@ -3,10 +3,8 @@ kind: Secret
 metadata:
   name: admin-basic-auth-user
   namespace: traefik
-data:
-  users: |
-    YWRtaW46NTc3NzJ5NTc3NzEwNTc3N3pHckNBaE5KL2RYTzlmUGd2Tm1sSi5qVG1MZ2FmYjRqeWVzVk83d2tjRlp0WER0Z3pDUzFlCg==
-
+stringData:
+  users: admin:$2y$10$los7PBpt8ry1pWft6UBof.jPS5WihNhU9QzKh0nabF61XZg1vNuJm
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
