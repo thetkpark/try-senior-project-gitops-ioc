@@ -4,7 +4,7 @@ metadata:
   name: admin-basic-auth-user
   namespace: traefik
 data:
-  users: |1
+  users: |
     YWRtaW46NTc3NzJ5NTc3NzEwNTc3N3pHckNBaE5KL2RYTzlmUGd2Tm1sSi5qVG1MZ2FmYjRqeWVzVk83d2tjRlp0WER0Z3pDUzFlCg==
 
 
