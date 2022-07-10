@@ -4,9 +4,8 @@ metadata:
   name: admin-basic-auth-user
   namespace: traefik
 data:
-  users: |2
+  users: |1
     dGVzdDokYXByMSRINnVza2trVyRJZ1hMUDZld1RyU3VCa1RycUU4d2ovCnRlc3QyOiRhcHIxJGQ5
-    aHI5SEJCJDRIeHdnVWlyM0hQNEVzZ2dQL1FObzAK
 
 ---
 apiVersion: traefik.containo.us/v1alpha1
