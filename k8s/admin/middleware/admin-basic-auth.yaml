@@ -5,8 +5,9 @@ metadata:
   namespace: traefik
 data:
   users: |1
-    dGVzdDokYXByMSRINnVza2trVyRJZ1hMUDZld1RyU3VCa1RycUU4d2ovCnRlc3QyOiRhcHIxJGQ5
-
+    YWRtaW46JDJ5JDEwJHZRQ2dzV3VPam9XMWtIRHFtcHlGTHVHNGtxTW41YlY3RVJJ
+    L3R4bW1oRWdBUU5BN1Q1eGNPCgo=
+    
 ---
 apiVersion: traefik.containo.us/v1alpha1
 kind: Middleware
